@@ -1,0 +1,16 @@
+input {
+ /*   border: 2px solid currentcolor; */
+  }
+  input:invalid {
+    border: 2px solid rgba(243, 6, 6, 0.925);
+  }
+  input:invalid:focus {
+ border:  2px solid rgba(255, 0, 0, 0.699);
+ 
+ /*   border: linear-gradient(rgb(243, 33, 33), rgba(173, 138, 138, 0.842)); */
+    
+  }
+  input:valid{
+    border:  2px solid rgba(0, 255, 21, 0.699);
+  /* border: linear-gradient(rgb(61, 151, 43), rgb(120, 235, 110)); */
+  }
