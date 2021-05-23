@@ -1,5 +1,15 @@
 $(document).ready(function() {    
-    $('#example').DataTable({        
+
+	
+  
+	$(document).on('click', '.close', function(){
+		$('.alert').hide();
+	});
+ 
+ 
+ 
+    $('#example').DataTable({      
+		  
         language: {
                 "lengthMenu": "Mostrar _MENU_ registros",
                 "zeroRecords": "No se encontraron resultados",

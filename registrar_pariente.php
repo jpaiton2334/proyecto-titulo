@@ -18,8 +18,8 @@ if(!isset($_SESSION["rol"])){
 
 
 // use the connection here
-$sth = $pdo->query('SELECT * from sector;');
-$consulta2 = $pdo->query('SELECT * from institucion;');
+$sth = $pdo->query('SELECT * from delincuente;');
+$consulta2 = $pdo->query('SELECT * from parentesco;');
 $resultado = $sth->fetchall();
 $resultado2 = $consulta2->fetchall();
 ?>
@@ -32,7 +32,7 @@ $resultado2 = $consulta2->fetchall();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registrar una zona para la institucion</title>
+    <title>Registrar pariente</title>
    <style>
    form{
        
@@ -47,40 +47,52 @@ $resultado2 = $consulta2->fetchall();
 <div class="row">
 <button class="btn btn-light mt-3"><a href="index.php">Volver al inicio</a></button>
 
-<h3 class="mt-3">Registrar una zona para la institucion</h3>
-<form  action="guardar_sector.php" method="post" id="formulario">
- <label>Zona</label>
-<select name="id" id="" class="form-control">
+<h3 class="mt-3">Registrar un pariente</h3>
+<form  action="guardar_pariente.php" method="post" id="formulario">
+
+<label>delincuente 1</label>
+<select name="id_delincuente" id="" class="form-control">
 <?php 
-foreach($resultado as $row){
+foreach($resultado as $row2){
 ?>
- <option value="<?php echo $row['id']?>"><?php echo $row['nombre']?></option>
-<?php
-}
-?>
-</select>
-<label>Institucion</label>
-<select name="codigo" id="" class="form-control">
-<?php 
-foreach($resultado2 as $row2){
-?>
- <option value="<?php echo $row2['codigo']?>"><?php echo $row2['nombre_ins']?></option>
+ <option value="<?php echo $row2['id']?>"><?php echo $row2['nombres']?> <?php echo $row2['apellidos']?></option>
 <?php
 }
 ?>
 </select>
 
-<input class="btn btn-primary mt-3" type="submit"  name="enviar" value="enviar" >
+
+
+
+ <label>parentesco</label>
+<select name="id_parentesco" id="" class="form-control">
+<?php 
+foreach($resultado2 as $row){
+?>
+ <option value="<?php echo $row['id_parentesco']?>"><?php echo $row['nombre_parentesco']?></option>
+<?php
+}
+?>
+</select>
+
+<label>delincuente 2</label>
+<select name="id_delincuente2" id="" class="form-control">
+<?php 
+foreach($resultado as $row2){
+?>
+ <option value="<?php echo $row2['id']?>"><?php echo $row2['nombres']?> <?php echo $row2['apellidos']?></option>
+<?php
+}
+?>
+</select>
+
+<input class="btn btn-primary mt-3" type="submit"  name="enviar" value="Guardar" >
 </form>
 </div>
 </div>
 
-
-
 <script src="validacion_formulario.js"></script>
 </body>
 </html>
-
-
 
 

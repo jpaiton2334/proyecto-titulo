@@ -9,7 +9,7 @@ $apellidos  = $_POST['apellidos'];
 $nombre_institucion = $_POST['nombre_institucion'];
 $fecha_ha  = $_POST['fecha_habilitacion'];
 $permisos  = $_POST['permisos'];
-$contraseña = password_hash($pass, PASSWORD_DEFAULT);
+$pass_cifrado = password_hash($pass, PASSWORD_DEFAULT);
 $sql = 'SELECT * FROM usuario where rut = ?';
 $sentencia = $pdo->prepare($sql);
 $sentencia->execute(array($rut));
@@ -29,7 +29,7 @@ values (:rut,:pass,:nombres,:apellidos,:nombre_institucion,
 :fecha_habilitacion,:permisos)");
 
 $consulta->bindParam(':rut',$rut);
-$consulta->bindParam(':pass',$contraseña);  
+$consulta->bindParam(':pass',$pass_cifrado);  
 $consulta->bindParam(':nombres',$nombres);
 $consulta->bindParam(':apellidos',$apellidos);
 $consulta->bindParam(':nombre_institucion',$nombre_institucion);
