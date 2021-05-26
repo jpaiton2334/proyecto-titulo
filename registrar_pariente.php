@@ -86,7 +86,7 @@ foreach($resultado as $row2){
 ?>
 </select>
 
-<input class="btn btn-primary mt-3" type="submit"  name="enviar" value="Guardar" >
+<input class="btn btn-primary mt-3" type="submit"  name="enviar" value="Registrar" >
 </form>
 </div>
 </div>

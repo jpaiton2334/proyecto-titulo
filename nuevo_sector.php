@@ -70,7 +70,7 @@ foreach($resultado2 as $row2){
 ?>
 </select>
 
-<input class="btn btn-primary mt-3" type="submit"  name="enviar" value="enviar" >
+<input class="btn btn-primary mt-3" type="submit"  name="enviar" value="Registrar" >
 </form>
 </div>
 </div>

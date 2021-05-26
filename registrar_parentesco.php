@@ -53,7 +53,7 @@ $resultado2 = $consulta2->fetchall();
 <label>nombre parentesco</label>
 <input type="text"pattern="[A-Za-z]+" name="nombre_parentesco" autocomplete="off" minlength="5" maxlength="15" class="form-control" required  placeholder="ej: hermano de"/>
 
-<input class="btn btn-primary mt-3" type="submit"  name="enviar" value="Guardar" >
+<input class="btn btn-primary mt-3" type="submit"  name="enviar" value="Registrar" >
 </form>
 </div>
 </div>

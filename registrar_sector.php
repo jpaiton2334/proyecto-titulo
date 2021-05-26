@@ -64,7 +64,7 @@ foreach($resultado as $row2){
  <label>Sector</label>
 <input type="text"pattern="[A-Za-z ]+" name="sector" autocomplete="off" minlength="5" maxlength="50" class="form-control" required  placeholder="ej: Plaza de armas"/>
 
-<input class="btn btn-primary mt-3" type="submit"  name="enviar" value="Guardar" >
+<input class="btn btn-primary mt-3" type="submit"  name="enviar" value="Registrar" >
 </form>
 </div>
 </div>

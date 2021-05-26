@@ -1,25 +1,22 @@
 <?php 
 require('conexion.php');
-session_start();
-if(!isset($_SESSION["rol"])){
-  header('location: login.php');
 
 
-}else{
-   if ($_SESSION['rol'] !=1) {
-        header('location: login.php');
-   }
- 
-}
-
- 
 // use the connection here
-$sth = $pdo->query("SELECT nuevo_delito_delincuente.id_delito,delincuente.nombres,delincuente.apellidos , nuevo_delito_delincuente.descripcion, sector.nombre,direccion_delito,fecha_delito
-FROM nuevo_delito_delincuente,delincuente,sector
-where  nuevo_delito_delincuente.id_delincuente = delincuente.id AND
-sector.id = nuevo_delito_delincuente.sector;
-");
+
+$sth = $pdo->query(' SELECT parientes.id_pariente, delincuente.nombres, delincuente.apellidos,parentesco.nombre_parentesco
+FROM parientes,delincuente,parentesco
+WHERE parientes.id_delincuente = delincuente.id AND
+parentesco.id_parentesco = parientes.id_parentesco;');
+
+
+$sth1 = $pdo->query('SELECT delincuente.id, delincuente.id
+FROM parientes,delincuente
+WHERE parientes.id_delincuente2 = delincuente.id 
+;');
+
 $resultado = $sth->fetchall();
+$resultado2 = $sth->fetchall();
 
  ?>
 
@@ -30,7 +27,7 @@ $resultado = $sth->fetchall();
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="shortcut icon" href="#" />  
-    <title>Ultima vez vistos</title>
+    <title>Vistos por comuna</title>
       
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
@@ -81,7 +78,7 @@ $resultado = $sth->fetchall();
   </div>
 </nav>
      <h1 class="text-center text-light">REGISTROS</h1>
-         <h2 class="text-center text-light">Ultima vez vistos <span class="badge badge-warning"></span></h2> 
+         <h2 class="text-center text-light">Listado  de delincuentes por comuna  <span class="badge badge-warning"></span></h2> 
      </header>    
     <div style="height:50px"></div>
      
@@ -95,29 +92,33 @@ $resultado = $sth->fetchall();
                         <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
                         <thead>
                             <tr>
-                                <th>ID delito</th>
-                               <th>nombres</th>
-                               <th>apellidos</th>
-                               <th>descripcion</th>
-                               <th>zona</th>
-                               <th>direccion</th>
-                               <th>fecha</th>
+                                <th>Id_pariente</th>
+                               <th>Nombres</th>
+                               <th>Apellidos</th>
+                               <th>Parentesco</th>
+                               <th>Nombres</th>
+                               <th>Apellidos</th>
                             </tr>
                         </thead>
                         <tbody>
-                        <?php foreach($resultado as $row) { ?>
+                        <?php foreach($resultado as $row ) { 
+                          foreach($resultado2 as $row2){
+                            ?>
+                                   
                             <tr>
-                                <td><?php  echo $row['id_delito'] ?></td>
+                                <td><?php  echo $row['id_pariente'] ?></td>
                                 <td><?php  echo $row['nombres'] ?></td>
-                                <td><?php  echo $row['apellidos'] ?></td>
-                                <td><?php  echo $row['descripcion'] ?></td>
-                                <td><?php  echo $row['nombre'] ?></td>
-                                <td><?php  echo $row['direccion_delito'] ?></td>
-                                <td><?php  echo $row['fecha_delito'] ?></td>
+                                <td><?php echo $row['apellidos']?></td>
+                                <td><?php echo $row['nombre_parentesco']?></td>
+                                <td><?php echo $row2['id'] ?></td>
+                                <td><?php echo $row2['id']?></td>
                             </tr>
                             
                                
-                        <?php }?>                    
+                        <?php
+                        }
+                        }?>  
+                                 
                         </tbody>        
                        </table>                  
                     </div>

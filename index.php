@@ -86,10 +86,10 @@ $resultado = $sql->fetchall();
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
             <li><a class="dropdown-item" href="listado_delincuentes.php">delincuentes por alfabeto</a></li>
-            <li><a class="dropdown-item" href="comuna_delincuente.php">delincuentes por comuna</a></li>
-            <li><a class="dropdown-item" href="ultima_ves_visto.php">delincuente ultima ves visto</a></li>
-             <li><a class="dropdown-item" href="#">Listado por fechas especificas*</a></li>
-             <li><a class="dropdown-item" href="listado_comunas.php">Listado comunas</a></li>
+            <li><a class="dropdown-item" href="listado_datos/comuna_delincuente.php">delincuentes por comuna</a></li>
+            <li><a class="dropdown-item" href="listado_datos/ultima_ves_visto.php">delincuente ultima ves visto</a></li>
+             <li><a class="dropdown-item" href="listado_datos/listado_fechas_especificas.php">Listado por fechas especificas*</a></li>
+             <li><a class="dropdown-item" href="listado_datos/listado_comunas.php">Listado comunas</a></li>
              <li><a class="dropdown-item" href="lista.php">prueba</a></li>
 
           </ul>
@@ -127,6 +127,8 @@ $resultado = $sql->fetchall();
      <h1 class="text-center text-light bg-dark">Pagina Principal</h1>
          <h2 class="text-center text-light ">Navega por las paginas  <span class="badge badge-warning"></span></h2> 
      </header>    
+
+     <img src="img/fuerza.jpg" class="img-fluid" alt="...">
     <!-- <div style="height:50px"></div>
      
 
@@ -158,7 +160,14 @@ $resultado = $sql->fetchall();
                 </div>
         </div>  
     </div>     -->
-     
+    <footer class="bg-light text-center text-lg-start">
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2021 Copyright:
+    <a class="text-dark" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+  </div>
+  <!-- Copyright -->
+</footer>
     <!-- jQuery, Popper.js, Bootstrap JS -->
     <script src="jquery/jquery-3.3.1.min.js"></script>
     <script src="popper/popper.min.js"></script>

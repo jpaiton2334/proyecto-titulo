@@ -39,7 +39,7 @@
     </div>
 </div>
 
-<!-- Delete
+
 <div class="modal fade" id="delete_<?php echo $row['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -47,9 +47,10 @@
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 <center><h4 class="modal-title" id="myModalLabel">Eliminar registro</h4></center>
             </div>
-            <div class="modal-body">	
+      
+             <div class="modal-body">	
             	<p class="text-center">Estas seguro que quieres borrarlo?</p>
-				<h2 class="text-center"><?php echo $row['nombre'] ?></h2>
+				<h2 class="text-center"><?php echo $row['nombres'] ?></h2>
 			</div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancelar</button>
@@ -58,4 +59,4 @@
 
         </div>
     </div>
-</div> -->
+</div>

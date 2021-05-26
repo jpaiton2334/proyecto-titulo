@@ -6,7 +6,6 @@
         $id= $_POST['id'];
 		$nombres = $_POST['nombres'];
 		$apellidos = $_POST['apellidos'];
-
    $sql ="UPDATE delincuente SET nombres,apellidos = '$nombres', '$apellidos' WHERE id = '$id'";
 		
 	$pdoQuery = "UPDATE delincuente set nombres=:nombres,apellidos=:apellidos where id=:id";

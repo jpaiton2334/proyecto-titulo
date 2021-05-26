@@ -1,6 +1,5 @@
 <?php 
-require('conexion.php');
-
+require('../conexion.php');
 session_start();
 if(!isset($_SESSION["rol"])){
   header('location: login.php');
@@ -14,13 +13,12 @@ if(!isset($_SESSION["rol"])){
 }
 
  
-
 // use the connection here
-$sth = $dbh->query('SELECT  delito.fecha_delito, comuna.nombre, tipo_delito.nombre
-FROM delito,comuna,tipo_delito
-where comuna.id = comuna.id and 
-delito.típo_delito = tipo_delito.id;
-');
+$sth = $pdo->query("SELECT nuevo_delito_delincuente.id_delito,delincuente.nombres,delincuente.apellidos , nuevo_delito_delincuente.descripcion, sector.nombre,direccion_delito,fecha_delito
+FROM nuevo_delito_delincuente,delincuente,sector
+where  nuevo_delito_delincuente.id_delincuente = delincuente.id AND
+sector.id = nuevo_delito_delincuente.sector;
+");
 $resultado = $sth->fetchall();
 
  ?>
@@ -32,17 +30,17 @@ $resultado = $sth->fetchall();
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="shortcut icon" href="#" />  
-    <title>Listado por fechas especificas</title>
+    <title>Ultima vez vistos</title>
       
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
     <!-- CSS personalizado --> 
-    <link rel="stylesheet" href="main.css">  
+    <link rel="stylesheet" href="../main.css">  
       
     <!--datables CSS básico-->
-    <link rel="stylesheet" type="text/css" href="datatables/datatables.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../datatables/datatables.min.css"/>
     <!--datables estilo bootstrap 4 CSS-->  
-    <link rel="stylesheet"  type="text/css" href="datatables/DataTables-1.10.18/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet"  type="text/css" href="../datatables/DataTables-1.10.18/css/dataTables.bootstrap4.min.css">
            
     <!--font awesome con CDN-->  
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">  
@@ -53,7 +51,7 @@ $resultado = $sth->fetchall();
      <header>
      <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="index.php">Inicio</a>
+    <a class="navbar-brand" href="../index.php"><i class="fas fa-home"></i>Inicio</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -76,7 +74,6 @@ $resultado = $sth->fetchall();
             <li><a class="dropdown-item" href="alfabeto.php">delincuentes por alfabeto</a></li>
             <li><a class="dropdown-item" href="comuna_delincuente.php">delincuentes por comuna</a></li>
             <li><a class="dropdown-item" href="ultima_ves_visto.php">delincuente ultima ves visto</a></li>
-            <li><a class="dropdown-item" href="listado_por_fechas_especificas.php">Listado por fechas especificas</a></li>
           </ul>
         </li>
       </ul>
@@ -84,7 +81,7 @@ $resultado = $sth->fetchall();
   </div>
 </nav>
      <h1 class="text-center text-light">REGISTROS</h1>
-         <h2 class="text-center text-light">Listado por fechas especificas<span class="badge badge-warning"></span></h2> 
+         <h2 class="text-center text-light">Ultima vez vistos <span class="badge badge-warning"></span></h2> 
      </header>    
     <div style="height:50px"></div>
      
@@ -98,17 +95,25 @@ $resultado = $sth->fetchall();
                         <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
                         <thead>
                             <tr>
-                                <th>fecha del delito</th>
-                               <th>nombre de comuna</th>
-                               <th>nombre del delito</th>
+                                <th>ID delito</th>
+                               <th>nombres</th>
+                               <th>apellidos</th>
+                               <th>descripcion</th>
+                               <th>zona</th>
+                               <th>direccion</th>
+                               <th>fecha</th>
                             </tr>
                         </thead>
                         <tbody>
                         <?php foreach($resultado as $row) { ?>
                             <tr>
+                                <td><?php  echo $row['id_delito'] ?></td>
                                 <td><?php  echo $row['nombres'] ?></td>
-                                <td><?php  echo $row['nombre_comuna'] ?></td>
-                                <td><?php  echo $row['fecha'] ?></td>
+                                <td><?php  echo $row['apellidos'] ?></td>
+                                <td><?php  echo $row['descripcion'] ?></td>
+                                <td><?php  echo $row['nombre'] ?></td>
+                                <td><?php  echo $row['direccion_delito'] ?></td>
+                                <td><?php  echo $row['fecha_delito'] ?></td>
                             </tr>
                             
                                
@@ -121,22 +126,22 @@ $resultado = $sth->fetchall();
     </div>    
      
     <!-- jQuery, Popper.js, Bootstrap JS -->
-    <script src="jquery/jquery-3.3.1.min.js"></script>
-    <script src="popper/popper.min.js"></script>
+    <script src="../jquery/jquery-3.3.1.min.js"></script>
+    <script src="../popper/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
       
     <!-- datatables JS -->
-    <script type="text/javascript" src="datatables/datatables.min.js"></script>    
+    <script type="text/javascript" src="../datatables/datatables.min.js"></script>    
      
     <!-- para usar botones en datatables JS -->  
-    <script src="datatables/Buttons-1.5.6/js/dataTables.buttons.min.js"></script>  
-    <script src="datatables/JSZip-2.5.0/jszip.min.js"></script>    
-    <script src="datatables/pdfmake-0.1.36/pdfmake.min.js"></script>    
-    <script src="datatables/pdfmake-0.1.36/vfs_fonts.js"></script>
-    <script src="datatables/Buttons-1.5.6/js/buttons.html5.min.js"></script>
+    <script src="../datatables/Buttons-1.5.6/js/dataTables.buttons.min.js"></script>  
+    <script src="../datatables/JSZip-2.5.0/jszip.min.js"></script>    
+    <script src="../datatables/pdfmake-0.1.36/pdfmake.min.js"></script>    
+    <script src="../datatables/pdfmake-0.1.36/vfs_fonts.js"></script>
+    <script src="../datatables/Buttons-1.5.6/js/buttons.html5.min.js"></script>
      
     <!-- código JS propìo-->    
-    <script type="text/javascript" src="main.js"></script>  
+    <script type="text/javascript" src="../main.js"></script>  
     
     
   </body>

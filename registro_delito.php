@@ -89,7 +89,7 @@ foreach($resultado3 as $row2){
 <input type="date" name="fecha_delito" autocomplete="off"  class="form-control" required/>
 
 
-<input class="btn btn-primary mt-3" type="submit"  name="enviar" value="Enviar" >
+<input class="btn btn-primary mt-3" type="submit"  name="enviar" value="Registrar" >
 </form>
 </div>
 </div>
