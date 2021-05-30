@@ -1,5 +1,5 @@
 <?php 
-require('conexion.php');
+require('../conexion.php');
 
 
 $id_comuna= $_POST['id_comuna'];
@@ -17,7 +17,7 @@ $sector= $_POST['sector'];
   
 if($consulta->execute()){
     echo 'consulta ingresada correctamente';
-    echo '<a href="index.php"> Volver al inicio</a>';
+    echo '<a href="../index.php"> Volver al inicio</a>';
 
 }else{
    echo 'error';

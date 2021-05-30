@@ -2,7 +2,7 @@
 
 
 
-require_once('conexion.php');
+require_once('../conexion.php');
 session_start();
 if(!isset($_SESSION["rol"])){
   header('location: login.php');
@@ -29,7 +29,7 @@ $resultado3= $consulta3->fetchall();
 <head>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     
-    <link rel="stylesheet" href="estilos_formulario_registro.css">
+    <link rel="stylesheet" href="../estilos_formulario_registro.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -46,7 +46,7 @@ $resultado3= $consulta3->fetchall();
 
 <div class="container">
 <div class="row">
-<a href="index.php">Volver al inicio</a>
+<a href="../index.php">Volver al inicio</a>
 <h3 class="mt-3">Registrar delito de delincuente</h3>
 <form method="post" action="guardar_delito.php" id="formulario">
 <label>Nombre delincuente</label>

@@ -35,15 +35,20 @@
         $username = $_POST['user'];
         $pass = $_POST['pass'];
         
-
+      
        
 
        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
        $query = $pdo->prepare("SELECT * FROM usuario where rut= :rut and
        pass =:pass");
 
-       $query->execute(['rut'=>$username,'pass'=>$pass]);
+       $query->execute(['rut'=>$username,'pass'=>$hash]);
        
+       if (password_verify($pass, $hash)) {
+        echo '¡La contraseña es válida!';
+    } else {
+        echo 'La contraseña no es válida.';
+    }
        $row = $query->fetch(PDO::FETCH_NUM);
          if ($row == true) {
            $rol = $row[7];

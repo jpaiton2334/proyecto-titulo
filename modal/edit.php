@@ -26,6 +26,6 @@ else{
 echo'Seleccionar  para  primero.';
 }
 
-header('location: ../listado_comunas.php');
+header('location: ../listado_datos/listado_comunas.php');
 
 ?>

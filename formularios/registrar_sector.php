@@ -1,6 +1,6 @@
 <?php 
 
-require('conexion.php');
+require('../conexion.php');
 
 session_start();
 if(!isset($_SESSION["rol"])){
@@ -45,10 +45,10 @@ $resultado2 = $consulta2->fetchall();
 
 <div class="container">
 <div class="row">
-<button class="btn btn-light mt-3"><a href="index.php">Volver al inicio</a></button>
+<button class="btn btn-light mt-3"><a href="../index.php">Volver al inicio</a></button>
 
 <h3 class="mt-3">Registrar sector</h3>
-<form  action="guardar_nuevo_sector.php" method="post" id="formulario">
+<form  action="../formularios_guardar/guardar_nuevo_sector.php" method="post" id="formulario">
 
 <label>comuna</label>
 <select name="id_comuna" id="" class="form-control">

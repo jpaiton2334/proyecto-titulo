@@ -1,6 +1,6 @@
 <?php 
 
-require('conexion.php');
+require('../conexion.php');
 
 session_start();
 if(!isset($_SESSION["rol"])){
@@ -28,7 +28,7 @@ $resultado2 = $consulta2->fetchall();
 <head>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     
-    <link rel="stylesheet" href="estilos_formulario_registro.css">
+    <link rel="stylesheet" href="../estilos_formulario_registro.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -45,7 +45,7 @@ $resultado2 = $consulta2->fetchall();
 
 <div class="container">
 <div class="row">
-<button class="btn btn-light mt-3"><a href="index.php">Volver al inicio</a></button>
+<button class="btn btn-light mt-3"><a href="../index.php">Volver al inicio</a></button>
 
 <h3 class="mt-3">Registrar un parentesco</h3>
 <form  action="guardar_parentesco.php" method="post" id="formulario">

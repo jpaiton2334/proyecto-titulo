@@ -27,6 +27,6 @@ else{
 echo'Seleccionar  para  primero.';
 }
 
-header('location: ../listado_delincuentes.php');
+header('location: ../listado_datos/listado_delincuentes.php');
 
 ?>

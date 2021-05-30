@@ -2,7 +2,7 @@
 
 
 
-require_once('conexion.php');
+require_once('../conexion.php');
 session_start();
 if(!isset($_SESSION["rol"])){
   header('location: login.php');
@@ -26,7 +26,7 @@ $resultado2= $consulta2->fetchall();
 <head>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     
-    <link rel="stylesheet" href="estilos_formulario_registro.css">
+    <link rel="stylesheet" href="../estilos_formulario_registro.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -43,9 +43,9 @@ $resultado2= $consulta2->fetchall();
 
 <div class="container">
 <div class="row">
-<a href="index.php">Volver al inicio</a>
+<a href="../index.php">Volver al inicio</a>
 <h3 class="mt-3">Registrar Usuario</h3>
-<form method="post" action="guardar.php" id="formulario">
+<form method="post" action="../formularios_guardar/guardar_usuario.php" id="formulario">
 <label>rut (sin espacios ni letras  y con guion)</label>
 <input type="text" pattern="[0-9-]+" name="rut" autocomplete="off" minlength="5" maxlength="13" class="form-control" required  placeholder="ej:19420189-3"/>
 <label>Password</label>
@@ -89,11 +89,11 @@ foreach($resultado2 as $row2){
 if(isset($_POST['rut'])&& isset($_POST['pass'])&& isset($_POST['nombres'])
 && isset($_POST['apellidos'])&& isset($_POST['nombre_institucion'])
 && isset($_POST['fecha_habilitacion'])&& isset($_POST['permisos']))
-require_once('conexion.php');
+require_once('../conexion.php');
 
 
 ?>
 
-<script src="validacion_formulario.js"></script>
+<script src="../validacion_formulario.js"></script>
 </body>
 </html>

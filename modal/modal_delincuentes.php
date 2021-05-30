@@ -8,7 +8,7 @@
             </div>
             <div class="modal-body">
 			<div class="container-fluid">
-			<form method="POST" action="modal/edit_delincuentes.php">
+			<form method="POST" action="../modal/edit_delincuentes.php">
 				<input type="hidden" class="form-control" name="id" value="<?php echo $row['id']; ?>">
 				<div class="row form-group">
 					<div class="col-sm-2">

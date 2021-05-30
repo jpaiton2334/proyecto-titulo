@@ -71,11 +71,11 @@ $resultado = $sql->fetchall();
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
            
-            <li><a class="dropdown-item" href="nuevo_sector.php">Asignar sector</a></li>
-            <li><a class="dropdown-item" href="usuario_carabinero.php">Nuevo delincuente</a></li>
-            <li><a class="dropdown-item" href="registro_delito.php">Nuevo delito delincuente</a></li>
-            <li><a class="dropdown-item" href="registrar_pariente.php">Nuevo pariente</a></li>
-            <li><a class="dropdown-item" href="registrar_parentesco.php">Nuevo parentesco</a></li>
+            <li><a class="dropdown-item" href="formularios/registrar_sector.php">Asignar sector</a></li>
+            <li><a class="dropdown-item" href="formularios/registrar_delincuente.php">Nuevo delincuente</a></li>
+            <li><a class="dropdown-item" href="formularios/registro_delito.php">Nuevo delito delincuente</a></li>
+            <li><a class="dropdown-item" href="formularios/registrar_pariente.php">Nuevo pariente</a></li>
+            <li><a class="dropdown-item" href="formularios/registrar_parentesco.php">Nuevo parentesco</a></li>
 
           
           </ul>
@@ -85,12 +85,12 @@ $resultado = $sql->fetchall();
            Listado de delincuentes 
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><a class="dropdown-item" href="listado_delincuentes.php">delincuentes por alfabeto</a></li>
+            <li><a class="dropdown-item" href="listado_datos/listado_delincuentes.php">delincuentes por alfabeto</a></li>
             <li><a class="dropdown-item" href="listado_datos/comuna_delincuente.php">delincuentes por comuna</a></li>
             <li><a class="dropdown-item" href="listado_datos/ultima_ves_visto.php">delincuente ultima ves visto</a></li>
-             <li><a class="dropdown-item" href="listado_datos/listado_fechas_especificas.php">Listado por fechas especificas*</a></li>
+             <li><a class="dropdown-item" href="listado_datos/listado_fechas_especificas.php">Listado por fechas especificas</a></li>
              <li><a class="dropdown-item" href="listado_datos/listado_comunas.php">Listado comunas</a></li>
-             <li><a class="dropdown-item" href="lista.php">prueba</a></li>
+         
 
           </ul>
         </li>
@@ -100,9 +100,9 @@ $resultado = $sql->fetchall();
            Registro de Datos Administrador
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><a class="dropdown-item" href="ingresar_instituciones.php">Registro de instituciones</a></li>
-            <li><a class="dropdown-item" href="registrar_comuna.php">Nueva Comuna</a></li>
-            <li><a class="dropdown-item" href="registrar_sector.php">Nuevo sector</a></li>
+            <li><a class="dropdown-item" href="formularios/registrar_instituciones.php">Registro de instituciones</a></li>
+            <li><a class="dropdown-item" href="formularios/registrar_comuna.php">Nueva Comuna</a></li>
+            <li><a class="dropdown-item" href="formularios/registrar_sector.php">Nuevo sector</a></li>
             
 
           </ul>
@@ -110,7 +110,7 @@ $resultado = $sql->fetchall();
 
         <li class="nav-item">
         
-          <a class="nav-link" href="registro_usuario.php"> <i class="fas fa-user-plus"></i> Registrar usuario</a>
+          <a class="nav-link" href="formularios/registro_usuario.php"> <i class="fas fa-user-plus"></i> Registrar usuario</a>
          
         </li>
         <li class="nav-item">
@@ -125,7 +125,7 @@ $resultado = $sql->fetchall();
 </nav>
     
      <h1 class="text-center text-light bg-dark">Pagina Principal</h1>
-         <h2 class="text-center text-light ">Navega por las paginas  <span class="badge badge-warning"></span></h2> 
+         <h2 class="text-center text-light ">Bienvenido <?php $_SESSION["rol"] ?> <span class="badge badge-warning"></span></h2> 
      </header>    
 
      <img src="img/fuerza.jpg" class="img-fluid" alt="...">

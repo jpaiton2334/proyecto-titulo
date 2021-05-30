@@ -1,6 +1,6 @@
 <?php
 
-require_once('conexion.php');
+require_once('../conexion.php');
 
 //$codigo  = $_POST['codigo'];
 $nombre  = $_POST['comuna'];
@@ -30,7 +30,7 @@ $consulta->bindParam(':nombre',$nombre);
 
 if($consulta->execute()){
     echo 'comuna ingresada correctamente';
-    echo '<a href="index.php"> Volver al inicio</a>';
+    echo '<a href="../index.php"> Volver al inicio</a>';
 
 }else{
    echo 'error';
