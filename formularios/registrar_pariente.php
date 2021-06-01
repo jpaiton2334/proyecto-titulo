@@ -48,7 +48,7 @@ $resultado2 = $consulta2->fetchall();
 <button class="btn btn-light mt-3"><a href="../index.php">Volver al inicio</a></button>
 
 <h3 class="mt-3">Registrar un pariente</h3>
-<form  action="guardar_pariente.php" method="post" id="formulario">
+<form  action="../formularios_guardar/guardar_pariente.php" method="post" id="formulario">
 
 <label>delincuente 1</label>
 <select name="id_delincuente" id="" class="form-control">

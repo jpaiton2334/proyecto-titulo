@@ -48,7 +48,7 @@ $resultado2 = $consulta2->fetchall();
 <button class="btn btn-light mt-3"><a href="../index.php">Volver al inicio</a></button>
 
 <h3 class="mt-3">Registrar un parentesco</h3>
-<form  action="guardar_parentesco.php" method="post" id="formulario">
+<form  action="../formularios_guardar/guardar_parentesco.php" method="post" id="formulario">
 
 <label>nombre parentesco</label>
 <input type="text"pattern="[A-Za-z]+" name="nombre_parentesco" autocomplete="off" minlength="5" maxlength="15" class="form-control" required  placeholder="ej: hermano de"/>

@@ -39,11 +39,35 @@ $resultado3 = $consulta3->fetchall();
 </head>
 
 <body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light ">
+  <div class="container-fluid">
+    <a class="navbar-brand color-green" href="usuario_carabinero.php">
+    <a class="navbar-brand" href="../index.php"><i class="fas fa-home"></i>Inicio</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+         f en el chatart
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item" href="../listado_delincuentes.php">f en el chat</a></li>
+          
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
 
     <div class="container">
-        <div class="row">
-            <a href="../index.php">Volver al inicio</a>
+        <div class="row ">
+      
+           
             <h3 class="mt-3">Registrar delincuente</h3>
             <form method="post" action="../formularios_guardar/guardar_delincuente.php" enctype="multipart/form-data" id="formulario">
                 <div class="mt-3"><label>rut (sin espacios ni letras y con guion)</label>
@@ -101,14 +125,14 @@ $resultado3 = $consulta3->fetchall();
                     </select>
                 </div>
 
-
+           
                 <div class="mt-3">
                     <label>Ingresado por la institucion</label>
                     <select name="permisos" id="" class="form-control">
                         <?php
                         foreach ($resultado as $row) {
                         ?>
-                            <option value="<?php echo $row['codigo'] ?>"><?php echo $row['nombre_ins'] ?></option>
+                            <option value="<?php echo $row["codigo"] ?>"><?php echo $row['nombre_ins'] ?></option>
                         <?php
                         }
                         ?>
@@ -122,7 +146,8 @@ $resultado3 = $consulta3->fetchall();
                     <input class="btn btn-primary mt-3" type="submit" name="enviar" value="Registrar">
                 </div>
             </form>
-        </div>
+     
+    </div>
     </div>
     <?php
     if (
@@ -138,6 +163,10 @@ $resultado3 = $consulta3->fetchall();
 
     ?>
 
+   <!-- jQuery, Popper.js, Bootstrap JS -->
+    <script src="../jquery/jquery-3.3.1.min.js"></script>
+    <script src="../popper/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
     <script src="../validacion_formulario.js"></script>
 </body>
 

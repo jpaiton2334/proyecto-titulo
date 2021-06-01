@@ -1,5 +1,5 @@
 <?php 
-require('conexion.php');
+require('../conexion.php');
 
 $parentesco = $_POST['nombre_parentesco'];
 
@@ -10,7 +10,7 @@ $resultado = $sentencia->fetch();
 
 if($resultado){
    echo 'parentesco ya registrado - debe ingresar otro parentesco';
-   echo '<a href="registrar_parentesco.php">Volver al formulario</a>';
+   echo '<a href="formularios_guardar/registrar_parentesco.php">Volver al formulario</a>';
     die();
     echo 'delincuente ingresado exitosamente';
 }
@@ -25,7 +25,7 @@ if($resultado){
   
 if($consulta->execute()){
     echo 'consulta ingresada correctamente';
-    echo '<a href="index.php"> Volver al inicio</a>';
+    echo '<a href="../index.php"> Volver al inicio</a>';
 
 }else{
    echo 'error';

@@ -1,6 +1,6 @@
 <?php
 
-require_once('conexion.php');
+require_once('../conexion.php');
 
 //$codigo  = $_POST['codigo'];
 $nombre  = $_POST['nombre_ins'];
@@ -14,7 +14,7 @@ $nombre  = $_POST['nombre_ins'];
 
  if($resultado){
    echo 'institucion ya registrada - debe ingresar otro nombre';
-   echo '<a href="ingresar_instituciones.php">Volver al formulario</a>';
+   echo '<a href="formularios/registrar_institucion.php">Volver al formulario</a>';
     die();
      echo 'usuario creado exitosamente';
  }
@@ -30,7 +30,7 @@ $consulta->bindParam(':nombre_ins',$nombre);
 
 if($consulta->execute()){
     echo 'consulta ingresada correctamente';
-    echo '<a href="index.php"> Volver al inicio</a>';
+    echo '<a href="../index.php"> Volver al inicio</a>';
 
 }else{
    echo 'error';

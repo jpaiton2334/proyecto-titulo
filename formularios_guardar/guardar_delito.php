@@ -1,6 +1,6 @@
 <?php
 
-require_once('conexion.php');
+require_once('../conexion.php');
 
 
 $nombre_delincuente  = $_POST['id_delincuente'];
@@ -40,7 +40,7 @@ $consulta->bindParam(':fecha_delito',$fecha_delito);
 
 if($consulta->execute()){
     echo 'delito ingresado correctamente';
-    echo '<a href="index.php"> Volver al inicio</a>';
+    echo '<a href="../index.php"> Volver al inicio</a>';
 
 }else{
    echo 'error';

@@ -1,5 +1,5 @@
 <?php 
-require('conexion.php');
+require('../conexion.php');
 
 
 
@@ -19,7 +19,7 @@ $id_delincuente2 = $_POST['id_delincuente2'];
   
 if($consulta->execute()){
     echo 'consulta ingresada correctamente';
-    echo '<a href="index.php"> Volver al inicio</a>';
+    echo '<a href="../index.php"> Volver al inicio</a>';
 
 }else{
    echo 'error';

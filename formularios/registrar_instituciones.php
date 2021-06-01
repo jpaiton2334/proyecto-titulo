@@ -44,7 +44,7 @@ if(!isset($_SESSION["rol"])){
     <button class="btn btn-light mt-3"><a href="../index.php">Volver al inicio</a></button>
 
 <h3 class="mt-3">Registrar Institucion</h3>
-<form method="post" action="guardar_institucion.php" id="formulario">
+<form method="post" action="../formularios_guardar/guardar_institucion.php" id="formulario">
 <!-- <label>Nombre de la institucion</label>
 <input type="text" pattern="[0-9-]+" name="codigo" autocomplete="off" minlength="5" maxlength="10" class="form-control" required  placeholder="ej: 2024"/> -->
 <label>Nombre de la institucion</label>

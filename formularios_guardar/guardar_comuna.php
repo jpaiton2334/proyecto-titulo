@@ -14,7 +14,7 @@ $nombre  = $_POST['comuna'];
 
  if($resultado){
    echo 'comuna ya registrada - debe ingresar otro nombre';
-   echo '<a href="ingresar_instituciones.php">Volver al formulario</a>';
+   echo '<a href=formularios/registrar_instituciones.php">Volver al formulario</a>';
     die();
      echo 'comuna creada exitosamente';
  }

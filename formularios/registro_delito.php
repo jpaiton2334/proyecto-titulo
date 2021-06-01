@@ -48,7 +48,7 @@ $resultado3= $consulta3->fetchall();
 <div class="row">
 <a href="../index.php">Volver al inicio</a>
 <h3 class="mt-3">Registrar delito de delincuente</h3>
-<form method="post" action="guardar_delito.php" id="formulario">
+<form method="post" action="../formularios_guardar/guardar_delito.php" id="formulario">
 <label>Nombre delincuente</label>
 <select name="id_delincuente" id="" class="form-control">
 <?php 

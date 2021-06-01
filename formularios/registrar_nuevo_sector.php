@@ -1,6 +1,6 @@
 <?php 
 
-require('conexion.php');
+require('../conexion.php');
 
 session_start();
 if(!isset($_SESSION["rol"])){
@@ -48,7 +48,7 @@ $resultado2 = $consulta2->fetchall();
 <button class="btn btn-light mt-3"><a href="index.php">Volver al inicio</a></button>
 
 <h3 class="mt-3">Registrar una zona para la institucion</h3>
-<form  action="guardar_sector.php" method="post" id="formulario">
+<form  action="../formularios_guardar/guardar_sector.php" method="post" id="formulario">
  <label>Zona</label>
 <select name="id" id="" class="form-control">
 <?php 

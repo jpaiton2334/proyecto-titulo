@@ -17,8 +17,8 @@
                 case 4:
                     header('Location:admin_zona_os10.php');
                     break;
-                case 5:
-                    header('Location:usuario_carabinero.php');
+                case 5 :
+                    header('Location:usuario/carabinero/usuario_carabinero.php');
                     break;
                 case 6:
                     header('Location:usuario_pdi.php');
@@ -42,20 +42,16 @@
        $query = $pdo->prepare("SELECT * FROM usuario where rut= :rut and
        pass =:pass");
 
-       $query->execute(['rut'=>$username,'pass'=>$hash]);
+       $query->execute(['rut'=>$username,'pass'=>$pass]);
        
-       if (password_verify($pass, $hash)) {
-        echo '¡La contraseña es válida!';
-    } else {
-        echo 'La contraseña no es válida.';
-    }
+  
        $row = $query->fetch(PDO::FETCH_NUM);
          if ($row == true) {
            $rol = $row[7];
            $_SESSION['rol'] = $rol;
 
             switch ($_SESSION['rol']) {
-                case 1:
+                case 1 :
                     header('location:index.php');
                     break;
                 case 2:
@@ -68,8 +64,8 @@
                 case 4:
                     header('Location:admin_zona_os10.php');
                     break;
-                case 5:
-                    header('Location:usuario_carabinero.php');
+                case  5  :
+                    header('Location:usuario/carabinero/usuario_carabinero.php');
                     break;
                 case 6:
                     header('Location:usuario_pdi.php');

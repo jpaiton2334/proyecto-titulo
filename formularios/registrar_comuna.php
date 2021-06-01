@@ -49,7 +49,7 @@ if(!isset($_SESSION["rol"])){
 <!-- <label>Nombre de la institucion</label>
 <input type="text" pattern="[0-9-]+" name="codigo" autocomplete="off" minlength="5" maxlength="10" class="form-control" required  placeholder="ej: 2024"/> -->
 <label>Nombre de la comuna</label>
-<input type="text"pattern="[A-Za-z ]+" name="comuna" autocomplete="off" minlength="5" maxlength="50" class="form-control" required  placeholder="ej: Santiago"/>
+<input type="text" pattern="[A-Za-z ]+" name="comuna" autocomplete="off" minlength="2" maxlength="20" class="form-control" required  placeholder="ej: Santiago"/>
 
 
 

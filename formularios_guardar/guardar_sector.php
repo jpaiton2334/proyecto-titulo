@@ -1,5 +1,5 @@
 <?php 
-require('conexion.php');
+require('../conexion.php');
 
 
 
@@ -16,7 +16,7 @@ require('conexion.php');
   
 if($consulta->execute()){
     echo 'consulta ingresada correctamente';
-    echo '<a href="index.php"> Volver al inicio</a>';
+    echo '<a href="../index.php"> Volver al inicio</a>';
 
 }else{
    echo 'error';
