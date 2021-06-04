@@ -51,30 +51,17 @@ $resultado = $sth->fetchall();
      <header>
      <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="../index.php"><i class="fas fa-home"></i>Inicio</a>
+  <a href="javascript:history.back()"><button class="btn btn-light">Volver Atrás</button> </a>    
+
+    <!-- <a class="navbar-brand" href="../index.php"><i class="fas fa-home"></i>Inicio</a> -->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
-        </li>
+      
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-           listado de delincuentes 
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><a class="dropdown-item" href="alfabeto.php">delincuentes por alfabeto</a></li>
-            <li><a class="dropdown-item" href="comuna_delincuente.php">delincuentes por comuna</a></li>
-            <li><a class="dropdown-item" href="ultima_ves_visto.php">delincuente ultima ves visto</a></li>
-          </ul>
+        
         </li>
       </ul>
     </div>
@@ -95,7 +82,7 @@ $resultado = $sth->fetchall();
                         <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
                         <thead>
                             <tr>
-                                <th>ID delito</th>
+                            
                                <th>nombres</th>
                                <th>apellidos</th>
                                <th>descripcion</th>
@@ -107,7 +94,7 @@ $resultado = $sth->fetchall();
                         <tbody>
                         <?php foreach($resultado as $row) { ?>
                             <tr>
-                                <td><?php  echo $row['id_delito'] ?></td>
+                             
                                 <td><?php  echo $row['nombres'] ?></td>
                                 <td><?php  echo $row['apellidos'] ?></td>
                                 <td><?php  echo $row['descripcion'] ?></td>

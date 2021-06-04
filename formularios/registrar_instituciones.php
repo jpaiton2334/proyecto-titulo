@@ -41,7 +41,7 @@ if(!isset($_SESSION["rol"])){
 
 <div class="container">
 <div class="row">
-    <button class="btn btn-light mt-3"><a href="../index.php">Volver al inicio</a></button>
+<a href="javascript:history.back()"><button class="btn btn-light">Volver Atrás</button> </a>    
 
 <h3 class="mt-3">Registrar Institucion</h3>
 <form method="post" action="../formularios_guardar/guardar_institucion.php" id="formulario">

@@ -50,17 +50,19 @@ $resultado = $sth->fetchall();
      <header>
      <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="../index.php">Inicio</a>
+  <a href="javascript:history.back()"><button class="btn btn-light">Volver Atrás</button> </a>    
+
+    <!-- <a class="navbar-brand" href="../index.php">Inicio</a> -->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
+          <!-- <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li> -->
       
-        <li class="nav-item dropdown">
+        <!-- <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
            listado de delincuentes 
           </a>
@@ -70,13 +72,13 @@ $resultado = $sth->fetchall();
             <li><a class="dropdown-item" href="../ultima_ves_visto.php">delincuente ultima ves visto</a></li>
             <li><a class="dropdown-item" href="../listado_fechas_especificas.php">Listado por fechas especificas</a></li>
           </ul>
-        </li>
+        </li> -->
       </ul>
     </div>
   </div>
 </nav>
   
-         <h3 class="text-center text-primary">Listado comunas<span class="badge badge-warning"></span></h3> 
+         <h3 class="text-center text-light">Listado comunas<span class="badge badge-warning"></span></h3> 
      </header>    
     <div style="height:50px"></div>
  

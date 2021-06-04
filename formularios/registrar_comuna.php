@@ -42,7 +42,7 @@ if(!isset($_SESSION["rol"])){
 
 <div class="container">
 <div class="row">
-    <button class="btn btn-light mt-3"><a href="../index.php">Volver al inicio</a></button>
+<a href="javascript:history.back()"><button class="btn btn-light">Volver Atrás</button> </a>    
 
 <h3 class="mt-3">Registrar Comuna</h3>
 <form method="post" action="../formularios_guardar/guardar_comuna.php" id="formulario">
@@ -57,7 +57,7 @@ if(!isset($_SESSION["rol"])){
 <!-- <label>permisos</label>
 <input type="number" name="permisos" autocomplete="off" minlength="5"  maxlength="4" class="form-control" required/> -->
 
-<input class="btn btn-primary mt-3" type="submit"  name="enviar" value="Registrar" >
+<input class="btn btn-success mt-3" type="submit"  name="enviar" value="Registrar" >
 </form>
 </div>
 </div>

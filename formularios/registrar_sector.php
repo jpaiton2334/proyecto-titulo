@@ -45,7 +45,7 @@ $resultado2 = $consulta2->fetchall();
 
 <div class="container">
 <div class="row">
-<button class="btn btn-light mt-3"><a href="../index.php">Volver al inicio</a></button>
+<a href="javascript:history.back()"><button class="btn btn-light">Volver Atrás</button> </a>    
 
 <h3 class="mt-3">Registrar sector</h3>
 <form  action="../formularios_guardar/guardar_nuevo_sector.php" method="post" id="formulario">

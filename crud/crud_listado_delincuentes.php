@@ -20,7 +20,6 @@ if(!isset($_SESSION["rol"])){
 
 
  ?>
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -50,16 +49,30 @@ if(!isset($_SESSION["rol"])){
    
      <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-    <!-- <a class="navbar-brand" href="../index.php"><i class="fas fa-home"></i>Inicio</a> -->
+    <a class="navbar-brand" href="../index.php"><i class="fas fa-home"></i>Inicio</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
-     
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Features</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Pricing</a>
+        </li>
         <li class="nav-item dropdown">
-        <a href="javascript:history.back()"><button class="btn btn-light">Volver Atrás</button> </a>    
-
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+           listado de delincuentes 
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item" href="listado_delincuentes.php">delincuentes por alfabeto</a></li>
+            <li><a class="dropdown-item" href="comuna_delincuente.php">delincuentes por comuna</a></li>
+            <li><a class="dropdown-item" href="ultima_ves_visto.php">delincuente ultima ves visto</a></li>
+          </ul>
         </li>
       </ul>
     </div>
@@ -84,7 +97,8 @@ if(!isset($_SESSION["rol"])){
                                 <th>Nombres</th>
                                 <th>Apellidos</th>
                                 <th>Foto</th>
-                             
+                                <th>Acciones</th>
+                              
                             </tr>
                         </thead>
                         <tbody>
@@ -100,7 +114,12 @@ if(!isset($_SESSION["rol"])){
               <?php    echo "<td>"; echo "<img src='".$row['foto']."' width='100' height='100' >"; echo "</td>"; ?>
                  
                 
-              
+                  <td>
+                  <a href="#edit_<?php echo $row['id']; ?>" class='btn btn-success btn-sm' data-toggle='modal'
+                  ><i class="fas fa-user-edit"></i></span> Editar</a>
+                  <a href='#delete_<?php echo $row['id'];?>'class='btn btn-danger btn-sm' data-toggle='modal'
+                  ><i class="far fa-trash-alt"></i> Borrar</a>
+                  </td>
                 </tr>
                 <?php include('../modal/modal_delincuentes.php'); ?>
                    

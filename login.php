@@ -76,7 +76,10 @@
                 default:
             }
         }else{
-            echo "usuario o pass incorrecto";
+            echo  '<script type="text/javascript">
+            alert("usuario o contraseña incorrectas");
+            
+            </script>';
         }
 
     }
@@ -85,43 +88,87 @@
 ?>
 
 
-<!DOCTYPE html>
+
+
 <html lang="en">
 
 <head>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Acceso</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" />
 
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login de usuarios</title>
-    <style>
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-        }
 
-        form {
-            border: 3px solid #f1f1f1;
-            padding: 16px;
-        }
-    </style>
-  
+  <style>
+
+:root{
+  --main-bg:#0404B4;
+}
+
+.main-bg {
+  background: var(--main-bg) !important;
+}
+
+input:focus, button:focus {
+  border: 1px solid var(--main-bg) !important;
+  box-shadow: none !important;
+}
+
+.form-check-input:checked {
+  background-color: var(--main-bg) !important;
+  border-color: var(--main-bg) !important;
+}
+
+.card, .btn, input{
+  border-radius:0 !important;
+}
+
+  </style>
 </head>
 
-<body>
+<body class="main-bg">
+  <!-- Login Form -->
+  <div class="container">
+    <div class="row justify-content-center mt-5">
+      <div class="col-lg-4 col-md-6 col-sm-6">
+        <div class="card shadow">
+          <div class="card-title text-center border-bottom">
+            <h2 class="p-3">Ingreso al sistema</h2>
+            <img src="img/icono-policia.png" width="100" alt="">
+          </div>
+          <div class="card-body">
+            <form action="#" method="POST">
+              <div class="mb-4">
+                <label for="username" class="form-label">Usuario</label>
+                <input type="text" name="user" class="form-control" required id="username" />
+              </div>
+              <div class="mb-4">
+                <label for="password" class="form-label">Contraseña</label>
+                <input type="password"  name="pass" class="form-control" required id="password" />
+              </div>
+              <div class="mb-4">
+                <input type="checkbox" class="form-check-input" id="remember" />
+                <label for="remember" class="form-label">Recuerdame</label>
+              </div>
+              <div class="d-grid">
+                <button type="submit" class="btn text-light main-bg">Acceso</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-    <form action="#" method="POST">
-        <h3>Sistema</h3>
-        <div class="mb-3">
-            <label for="txt1"> Ingrese su rut</label>
-            <input type="" name="user" class="form-control" required>
-        </div>
-        <div class="mb-3">
-            <label for="txt1" class="form-label"> Ingrese su contraseña</label>
-            <input type="password" name="pass" class="form-control" required>
-        </div>
-        <input type="submit" name="" value="Ingresar" class="btn btn-primary">
-    </form>
+  <footer class="bg-light text-center text-lg-start mt-3">
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: #08088A;color:aliceblue;">
+    © 2021, Si tienes problemas con la pagina comunicate con :
+    <a class="" style="color:(38, 218, 36);" href="mailto:jpabloperaltacasanova@gmail.com"> jpabloperaltacasanova@gmail.com</p></a>
+  </div>
+  
+  <!-- Copyright -->
+</footer>
 </body>
 
 </html>

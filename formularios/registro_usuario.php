@@ -43,7 +43,7 @@ $resultado2= $consulta2->fetchall();
 
 <div class="container">
 <div class="row">
-<a href="../index.php">Volver al inicio</a>
+<a href="javascript:history.back()"><button class="btn btn-light">Volver Atrás</button> </a>    
 <h3 class="mt-3">Registrar Usuario</h3>
 <form method="post" action="../formularios_guardar/guardar_usuario.php" id="formulario">
 <label>rut (sin espacios ni letras  y con guion)</label>

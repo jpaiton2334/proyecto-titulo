@@ -125,7 +125,7 @@ $resultado = $sql->fetchall();
 </nav>
     
      <h1 class="text-center text-light bg-dark">Pagina Principal</h1>
-         <h2 class="text-center text-light ">Bienvenido <?php $_SESSION["rol"] ?> <span class="badge badge-warning"></span></h2> 
+         <h2 class="text-center text-light ">Bienvenido  <span class="badge badge-warning"></span></h2> 
      </header>    
 
      <img src="img/fuerza.jpg" class="img-fluid" alt="...">

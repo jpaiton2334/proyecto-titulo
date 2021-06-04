@@ -24,6 +24,8 @@ $resultado3 = $consulta3->fetchall();
 <html lang="en">
 
 <head>
+     <!--font awesome con CDN-->  
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">  
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <link rel="stylesheet" href="../estilos_formulario_registro.css">
     <meta charset="UTF-8">
@@ -39,26 +41,23 @@ $resultado3 = $consulta3->fetchall();
 </head>
 
 <body>
+
+
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light ">
   <div class="container-fluid">
-    <a class="navbar-brand color-green" href="usuario_carabinero.php">
-    <a class="navbar-brand" href="../index.php"><i class="fas fa-home"></i>Inicio</a>
+ 
+    <a href="javascript:history.back()"><button class="btn btn-light">Volver Atrás</button> </a>     
+    
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
         
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-         f en el chatart
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><a class="dropdown-item" href="../listado_delincuentes.php">f en el chat</a></li>
-          
-          </ul>
-        </li>
+    
       </ul>
+     
     </div>
   </div>
 </nav>

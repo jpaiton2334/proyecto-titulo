@@ -46,7 +46,7 @@ $resultado3= $consulta3->fetchall();
 
 <div class="container">
 <div class="row">
-<a href="../index.php">Volver al inicio</a>
+<a href="javascript:history.back()"><button class="btn btn-light">Volver Atrás</button> </a>    
 <h3 class="mt-3">Registrar delito de delincuente</h3>
 <form method="post" action="../formularios_guardar/guardar_delito.php" id="formulario">
 <label>Nombre delincuente</label>
