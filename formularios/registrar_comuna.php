@@ -45,7 +45,7 @@ if(!isset($_SESSION["rol"])){
 <a href="javascript:history.back()"><button class="btn btn-light">Volver Atrás</button> </a>    
 
 <h3 class="mt-3">Registrar Comuna</h3>
-<form method="post" action="../formularios_guardar/guardar_comuna.php" id="formulario">
+<form method="post" action="../formularios_guardar/guardar_comuna.php"  id="formulario">
 <!-- <label>Nombre de la institucion</label>
 <input type="text" pattern="[0-9-]+" name="codigo" autocomplete="off" minlength="5" maxlength="10" class="form-control" required  placeholder="ej: 2024"/> -->
 <label>Nombre de la comuna</label>

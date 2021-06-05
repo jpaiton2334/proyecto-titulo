@@ -3,7 +3,8 @@
 require_once('../conexion.php');
 
 $rut  = $_POST['rut'];
-$pass  = $_POST['pass'];
+$pass = $_POST['pass'];
+
 $nombres  = $_POST['nombres'];
 $apellidos  = $_POST['apellidos'];
 $nombre_institucion = $_POST['nombre_institucion'];

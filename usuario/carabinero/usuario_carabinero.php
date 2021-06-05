@@ -116,17 +116,17 @@ if (!isset($_SESSION["rol"])) {
 <div class="row">
 
 
-<div class="col-12 col-md-4 mt-5">
+ <div class="col-12 col-md-4 mt-5">
 <div class="card" style="width: 18rem;">
   <img src="../../img/listado_delincuentes.jpg" class="card-img-top" alt="...">
   <div class="card-body">
     <h5 class="card-title">listado de delincuentes</h5>
     <p class="card-text">ver delincuentes ordenados alfabeticamente.</p>
-    <a href="#" class="btn btn-success">Ver delincuentes PENDIENTE</a>
+    <a href="../../listado_datos/listado_delincuentes.php" class="btn btn-success">Ver delincuentes </a>
   </div>
 </div>
 </div>
-
+<!--
 <div class="col-12 col-md-4 mt-5">
 <div class="card" style="width: 18rem;">
   <img src="../../img/counas.jpg" class="card-img-top" alt="...">
@@ -147,11 +147,11 @@ if (!isset($_SESSION["rol"])) {
     <a href="../../listado_datos/listado_fechas_especificas.php" class="btn btn-success">ver delitos </a>
   </div>
 </div>
-</div>
+</div> -->
 </div>
 
 
-<div class="row">
+<!-- <div class="row">
 
 <div class="col-12 col-md-4 mt-5">
 <div class="card" style="width: 18rem;">
@@ -177,7 +177,7 @@ if (!isset($_SESSION["rol"])) {
 </div>
 
 
-</div>
+</div> -->
   </div>
 
   <footer class="bg-light text-center text-lg-start mt-3">

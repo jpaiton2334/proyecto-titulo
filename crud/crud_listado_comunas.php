@@ -94,7 +94,7 @@ $resultado = $sth->fetchall();
                             <tr>
                                 <th>ID</th>
                                <th>Nombre</th>
-                              <!-- <th>funciones</th> -->
+                              <th>funciones</th>
                             
                             </tr>
                         </thead>
@@ -104,12 +104,12 @@ $resultado = $sth->fetchall();
                                 <td><?php  echo $row['id'] ?></td>
                                 <td><?php  echo $row['nombre'] ?></td>
                               
-                                <!-- <td>
+                                <td>
                               <a href="#edit_<?php echo $row['id']; ?>" class='btn btn-success btn-sm' data-toggle='modal'
                               ><i class="fas fa-user-edit"></i></span> Editar</a>
                               <a href='#delete_<?php echo $row['id'];?>'class='btn btn-danger btn-sm' data-toggle='modal'
                               ><i class="far fa-trash-alt"></i> Borrar</a>
-                              </td> -->
+                              </td>
                             </tr>
                             <?php include('../modal/edit_delete_comunas.php'); ?>
                                
