@@ -1,0 +1,45 @@
+html,body{
+    width: 100%;
+    overflow-x: hidden;
+}
+
+body{
+    background-color: brown;
+}
+
+
+#footer {
+
+
+    background-color: #373338;
+    color: #ffffff;
+}
+#footer section{
+    color: #B8A3F7;
+}
+
+#card a {
+    background-color: #8059F5;
+    color: #ffffff;
+    
+}
+
+.navbar  {
+    background-color: #8059F5; 
+  
+}
+
+.navbar a {
+ background-color:#8059F5;
+  color: #ffff;
+  
+}
+.container-fluid  {
+    background-color:#8059F5 ;
+     color: #ffff;
+     
+   }
+
+
+
+

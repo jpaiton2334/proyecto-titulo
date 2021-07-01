@@ -1,13 +1,19 @@
- header {
-    background: #190230 !important;
+html,body{
+    width: 100%;
+    overflow-x: hidden;
+}
+
+
+header {
+    background: #f8f8f8 !important;
     background: -webkit-linear-gradient(to right , #f5f5f5, #050505 );
     background: linear-gradient(to right, #ceadad, #03036d);
 } 
 
 /*estilos para la tabla*/
 table th {
-    background-color: #37b733 !important;
-    color: white;
+    background-color: #574D75 !important;
+    color: rgb(19, 17, 17);
 }
 table>tbody>tr>td {
     vertical-align: middle !important;
@@ -17,4 +23,3 @@ table>tbody>tr>td {
 .btn-group, .btn-group-vertical {
     position: absolute !important;
 }
-

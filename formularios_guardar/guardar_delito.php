@@ -11,20 +11,20 @@ $direccion_delito = $_POST['direccion_delito'];
 $fecha_delito = $_POST['fecha_delito'];
 
 
-//   $sql = 'SELECT * FROM institucion where nombre_ins  = ?';
-//   $sentencia = $pdo->prepare($sql);
-//   $sentencia->execute(array($nombre));
+  $sql = 'SELECT * FROM nuevo_delito_delincuente where fecha_delito = ?';
+  $sentencia = $pdo->prepare($sql);
+  $sentencia->execute(array($fecha_delito));
 
-//  $resultado = $sentencia->fetch();
+ $resultado = $sentencia->fetch();
 
-//   if($resultado){
-//     echo 'delito ya registrada - debe ingresar otra descripcion';
-//     echo '<a href="registrar_delito.php">Volver al formulario</a>';
-//      die();
-//       echo 'delito ingresado exitosamente';
-//  }
-
-
+if($resultado){
+    echo json_encode('registrada');
+    // echo "<p style='color:white; border:2px red solid;  border-radius: 10px;margin-top:5px; background-color: red;'>La comuna ya se encuentra registrada</p>";
+   
+    
+       
+   }else{
+  
 $consulta = $pdo->prepare("INSERT INTO nuevo_delito_delincuente (id_delincuente,tipo_delito,sector,descripcion,direccion_delito,fecha_delito) 
 values (:id_delincuente,:tipo_delito,:sector,:descripcion,:direccion_delito,:fecha_delito)");
 
@@ -39,14 +39,15 @@ $consulta->bindParam(':fecha_delito',$fecha_delito);
 
 
 if($consulta->execute()){
-    echo 'delito ingresado correctamente';
-    echo '<a href="../index.php"> Volver al inicio</a>';
+    echo json_encode('delito ingresado correctamente');
+   
 
 }else{
-   echo 'error';
+    echo json_encode('error');
+   
 }
 
-
+   }
 
 
 

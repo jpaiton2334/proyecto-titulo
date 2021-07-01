@@ -1,5 +1,5 @@
 <?php
-require('conexion.php');
+require('../../conexion.php');
 
 session_start();
 if(!isset($_SESSION["rol"])){
@@ -23,10 +23,10 @@ if(!isset($_SESSION["rol"])){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Usuario OS10</title>
+    <title>Usuario seguridad ciudadana</title>
 </head>
 <body>
-Usuario OS10
+Usuario Seguridad ciudadana
 
 </body>
 </html>

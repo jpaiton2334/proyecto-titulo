@@ -1,5 +1,5 @@
 <?php
-require('conexion.php');
+require('../../conexion.php');
 
 session_start();
 if(!isset($_SESSION["rol"])){
@@ -7,7 +7,7 @@ if(!isset($_SESSION["rol"])){
 
 
 }else{
-   if ($_SESSION['rol'] !=4) {
+   if (!$_SESSION['rol'] == 4 || !$_SESSION['rol'] == 1 ) {
         header('location: login.php');
    }
  
@@ -26,7 +26,8 @@ if(!isset($_SESSION["rol"])){
     <title>Admin zona OS10</title>
 </head>
 <body>
-  Admin zona OS10
+  Admin zona seguridad ciudadana
+  admin_zona_s_ciudadana
 
 </body>
 </html>

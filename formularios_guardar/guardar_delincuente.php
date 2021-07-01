@@ -27,13 +27,19 @@ $sentencia = $pdo->prepare($sql);
 $sentencia->execute(array($rut));
 $resultado = $sentencia->fetch();
 
-
+if($rut === '' || $nombres === '' || $apellidos === ''|| $apodo === '' || $domicilio === ''|| $telefono === ''|| $celular === ''|| $email === ''
+|| $fecha_nacimiento === '' || $estado === ''|| $nombre_institucion_usuario === ''){
+    echo json_encode('error');
+   
+  }else{
+  
 if($resultado){
-   echo 'delincuente ya registrado - debe ingresar otro rut';
-   echo '<a href="../index.php">Volver al formulario</a>';
-    die();
-    echo 'delincuente ingresado exitosamente';
-}
+ 
+    echo json_encode('registrada');
+}else{
+
+
+
 
 
 $consulta = $pdo->prepare("INSERT INTO delincuente (rut, nombres,apellidos,apodo,domicilio,telefono,
@@ -56,14 +62,14 @@ $consulta->bindParam(':foto',$ruta);
 
 
 if($consulta->execute()){
-    echo 'consulta ingresada correctamente';
-    echo '<a href="../index.php"> Volver al inicio</a>';
+    echo json_encode("Delincuente ingresado correctamente");
 
 }else{
-   echo 'error';
+    echo json_encode("error");
 }
 
+}//fin de ingreso de rut repetido
 
-
+  } //fin del else campos vacios
 ?>
 

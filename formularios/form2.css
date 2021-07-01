@@ -1,0 +1,64 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400);
+#colum1 form{
+  padding: 60px;
+  max-width: 75%;
+  background-color: #eee7fc;
+  margin: 0 auto;
+  width: 85%; height: 100%;
+}
+
+#colum2 img{
+ padding: 60px;
+
+  max-width: 100%;
+  background-color: #ebe6f7;
+  margin: 0 auto;
+  width: 85%; height: 100%;
+}
+#colum3 h3{
+    padding: 60px;
+
+  max-width: 100%;
+  background-color: #ddd2f5;
+  margin: 0 auto;
+  width: 85%; height: 100%;
+}
+
+
+form button:hover{
+	background-color: #046193;
+}
+textarea { resize: none; }
+
+@media screen and (max-width:1100px){
+ 
+  #colum2 {
+    display: none;
+  }
+  #colum1 {
+    width: 89%;
+  }
+ 
+}
+
+@media screen and (max-width:1062px){
+ 
+ 
+  #colum1 {
+    width: 100%;
+  }
+  #colum3 {
+    width: 100%;
+  }
+
+
+}
+@media screen and (max-width:1100px){
+ 
+  #myCarousel {
+    display: none;
+  }
+ 
+ 
+}
+

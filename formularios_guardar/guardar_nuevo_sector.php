@@ -2,28 +2,38 @@
 require('../conexion.php');
 
 
-$id_comuna= $_POST['id_comuna'];
-$sector= $_POST['sector'];
 
+    $id  = $_POST['id'];
+    $nombre  = $_POST['codigo'];
     
-    $consulta = $pdo->prepare("INSERT INTO sector (id_comuna,nombre) 
-    values (:id_comuna,:nombre)");
+    $sql = 'SELECT * FROM cantidad_sectores  where id_sector =?';
+    $sentencia = $pdo->prepare($sql);
+    $sentencia->execute(array($id));
+   
+    $resultado = $sentencia->fetch();
+   
+    if($resultado){
+     echo json_encode('registrada');
+    }else{
+
+
+  
     
-    $consulta->bindParam(':id_comuna',$id_comuna);
-    $consulta->bindParam(':nombre',$sector);
-
-
+    $consulta = $pdo->prepare("INSERT INTO cantidad_sectores (id_sector,id_institucion) 
+    values (:id_sector,:id_institucion)");
+    
+    $consulta->bindParam(':id_sector',$id);
+    $consulta->bindParam(':id_institucion',$nombre);
     
   
 if($consulta->execute()){
-    echo 'consulta ingresada correctamente';
-    echo '<a href="../index.php"> Volver al inicio</a>';
+    echo json_encode("sector ingresado correctamente");
 
 }else{
-   echo 'error';
+   echo json_encode('error');
 }
 
-
+}//fin repetida
 
 
 

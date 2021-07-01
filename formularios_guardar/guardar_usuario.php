@@ -12,20 +12,28 @@ $fecha_ha  = $_POST['fecha_habilitacion'];
 $permisos  = $_POST['permisos'];
 $pass_cifrado = password_hash($pass, PASSWORD_DEFAULT);
 
-
-
 $sql = 'SELECT * FROM usuario where rut = ?';
 $sentencia = $pdo->prepare($sql);
 $sentencia->execute(array($rut));
 $resultado = $sentencia->fetch();
 
-if($resultado){
-   echo 'usuario ya registrado - debe ingresar otro rut';
-   echo '<a href="formularios_guardar/registro_usuario.php">Volver al formulario</a>';
-    die();
-    echo 'usuario creado exitosamente';
-}
 
+if($rut === '' || $pass_cifrado === '' || $nombres === ''|| $apellidos === '' || $fecha_ha === ''
+){
+    echo json_encode('error');
+   
+  }else{
+     
+
+    
+if($resultado){
+    echo json_encode('registrada');
+  }// ya registrada
+  
+  else{
+
+
+ 
 
 $consulta = $pdo->prepare("INSERT INTO usuario (rut, pass,nombres
 ,apellidos,nombre_institucion,fecha_habilitacion,permisos) 
@@ -41,14 +49,19 @@ $consulta->bindParam(':fecha_habilitacion',$fecha_ha);
 $consulta->bindParam(':permisos',$permisos);
 
 if($consulta->execute()){
-    echo 'consulta ingresada correctamente';
-    echo '<a href="../index.php"> Volver al inicio</a>';
+    echo json_encode("Usuario ingresado correctamente");
 
-}else{
-   echo 'error';
-}
+} //ingresado correctamente
 
 
+else{
+    echo json_encode("error");
+}//error
 
+  }//cierrre de consulta ya registrada
+
+
+  
+  } //fin de validar datos vacios
 ?>
 
