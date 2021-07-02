@@ -4,7 +4,7 @@ require_once('../../../conexion.php');
 session_start();
 if (!isset($_SESSION["rol"])) {
   header('location: login.php');
-} else if (!$_SESSION['rol'] == 3 )   {
+} else if (!$_SESSION['rol'] == 4 )   {
     header('location: ../../../login.php');
   }
 
@@ -13,7 +13,7 @@ if (!isset($_SESSION["rol"])) {
 
 // use the connection here
 $sth = $pdo->query('SELECT * from sector;');
-$consulta2 = $pdo->query('SELECT * from institucion where codigo =2021;');
+$consulta2 = $pdo->query('SELECT * from institucion where codigo =80811;');
 $resultado = $sth->fetchall();
 $resultado2 = $consulta2->fetchall();
 ?>
@@ -88,7 +88,7 @@ $resultado2 = $consulta2->fetchall();
 
     <ul class=" nav justify-content-center mt-20" style="background-color:#8059F5">
 <li class="nav-item">
-<img src="../../../iconos/carabinero.jpg " width="60" class="mb-4 mt-4" alt="">
+<img src="../../../iconos/s.png " width="60" class="mb-4 mt-4" alt="">
 </li>
   <li class="nav-item">
   
@@ -138,7 +138,7 @@ foreach($resultado2 as $row2){
 ?>
 </select>
 
-<button type="submit" class="btn btn-success mt-3" >Registrar</button>
+<button type="submit" class="btn btn-secondary mt-3" >Registrar</button>
 
 					<!-- <input class="btn btn-success mt-3" type="submit" name="enviar" value="Registrar"> -->
 					<div class="mt-3 " id="respuesta" >
@@ -248,28 +248,29 @@ foreach($resultado2 as $row2){
 					<h5 class="text-uppercase">SÍGUENOS
 					</h5>
 
-					<ul class="list-unstyled mb-0">
+                    <ul class="list-unstyled mb-0">
 						<li>
 							<a class="btn btn-outline-light btn-floating m-1"
-								href="https://www.facebook.com/CarabinerosdeChile" role="button"><i
-									class="fab fa-facebook-f"></i></a>
+								href="http://www.munistgo.info/seguridad/" role="button"><i
+									class="fab fa-internet-explorer"></i></a>
 
 						</li>
 						<li>
 							<!-- Instagram -->
 							<a class="btn btn-outline-light btn-floating m-1"
-								href="https://www.instagram.com/carabchile/?hl=es-la" role="button"><i
-									class="fab fa-instagram"></i></a>
+								href="https://www.instagram.com/munistgo/?hl=es-la" role="button">
+                <i	class="fab fa-instagram"></i></a>
+               
+
 
 						</li>
 						<li>
 							<!-- Instagram -->
 							<a class="btn btn-outline-light btn-floating m-1"
-								href="https://www.youtube.com/user/TVCarabineros" role="button"><i
-									class="fab fa-youtube"></i></a>
+								href="https://www.facebook.com/munistgo/" role="button"><i
+									class="fab fa-facebook"></i></a>
 
 						</li>
-
 					</ul>
 				</div>
 				<!--Grid column-->

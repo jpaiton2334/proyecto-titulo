@@ -1,27 +1,30 @@
+
 <?php 
+
+
 
 require_once('../../../conexion.php');
 session_start();
 if (!isset($_SESSION["rol"])) {
   header('location: login.php');
-} else if (!$_SESSION['rol'] == 3 )   {
+} else if (!$_SESSION['rol'] == 7 )   {
     header('location: ../../../login.php');
   }
 
 
-
-
 // use the connection here
-$sth = $pdo->query('SELECT * from sector;');
-$consulta2 = $pdo->query('SELECT * from institucion where codigo =2021;');
-$resultado = $sth->fetchall();
-$resultado2 = $consulta2->fetchall();
+
+
+$consulta = $pdo->query('SELECT * from institucion  where codigo =80811;');
+$admin = $pdo->query('SELECT * FROM `permisos` where id=4 or id=7 ');
+$resultado= $consulta->fetchall();
+$resul= $admin->fetchall();
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <link rel="stylesheet" href="../../../estilos_formulario_registro.css">
-	<link rel="shortcut icon" href="../../../iconos/justicie.PNG" type="image/x-icon">
+	<link rel="shortcut icon" href="../../../iconos/s.PNG" type="image/x-icon">
 	<link rel="stylesheet" href="../../../formularios/form2.css">
 	<link rel="stylesheet" href="../../../estilos_index.css">
 
@@ -38,8 +41,8 @@ $resultado2 = $consulta2->fetchall();
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
-    <title>Registrar una zona para la institucion</title>
- 
+    <title>Registro de Usuarios</title>
+  
 </head>
 <body>
 
@@ -84,11 +87,10 @@ $resultado2 = $consulta2->fetchall();
 	<!-- fin carrusel de imagenes -->
 
 
-
-
-    <ul class=" nav justify-content-center mt-20" style="background-color:#8059F5">
+	
+	<ul class=" nav justify-content-center mt-20" style="background-color:#8059F5">
 <li class="nav-item">
-<img src="../../../iconos/carabinero.jpg " width="60" class="mb-4 mt-4" alt="">
+<img src="../../../iconos/s.png " width="60" class="mb-4 mt-4" alt="">
 </li>
   <li class="nav-item">
   
@@ -110,54 +112,76 @@ $resultado2 = $consulta2->fetchall();
 
 
 
+
+
 <div class="container">
 <div class="row">
 
-<div class="col-10 col-md-6 mt-4 mb-4" id="colum1">
+<div class="col-10 col-md-12 mt-4 mb-4" id="colum1">
+		
+<form id="formulario"  class="form-style-9">
+<h3 class="mt-3" id="inicio">Registrar Usuario</h3>
 
-<form  class="form-style-9" id="formulario">
-<h3 class="mt-3" id="inicio">Registrar una zona para la institucion</h3>
- <label>Zona</label>
-<select name="id" id="" class="form-control">
+
+
+
+<label>rut (sin espacios ni letras  y con guion)</label>
+<input type="text"pattern="\d{3,8}-[\d|kK]{1}" name="rut" minlength="9" maxlength="10" autocomplete="off"  class="form-control"   placeholder="ej:19420189-3" required/>
+
+
+<label>Password</label>
+<input type="password"  name="pass"  autocomplete="off"  minlength="5"  maxlength="50" class="form-control" required />
+<label>nombres</label>
+<input type="text" name="nombres" pattern="[A-Za-z ]+" autocomplete="off" minlength="5"  maxlength="50"  class="form-control" required  />
+<label>apellidos</label>
+<input type="text" name="apellidos" pattern="[A-Za-z ]+" autocomplete="off"  minlength="5"   maxlength="50"  class="form-control"  required/>
+
+<label>Nombre institucion</label>
+
+
+<select name="nombre_institucion"   id="" class="form-control">
 <?php 
 foreach($resultado as $row){
 ?>
- <option value="<?php echo $row['id']?>"><?php echo $row['nombre']?></option>
+ <option value="<?php echo $row['codigo'] ?> "><?php echo $row['nombre_ins']?></option>
 <?php
 }
 ?>
 </select>
-<label>Institucion</label>
-<select name="codigo" id="" class="form-control">
+
+<label>fecha de habilitacion</label>
+<input type="date" name="fecha_habilitacion" autocomplete="off"  class="form-control"  min="2010-01-01" max="2021-12-31" />
+
+
+<label>Permisos</label>
+<select name="permisos" id="" class="form-control">
 <?php 
-foreach($resultado2 as $row2){
+foreach($resul as $row2){
 ?>
- <option value="<?php echo $row2['codigo']?>"><?php echo $row2['nombre_ins']?></option>
+ <option value="<?php echo $row2['id']?>"><?php echo $row2['nombre']?></option>
 <?php
 }
 ?>
 </select>
 
-<button type="submit" class="btn btn-success mt-3" >Registrar</button>
+<button type="submit" class="btn btn-secondary mt-3" >Registrar</button>
 
-					<!-- <input class="btn btn-success mt-3" type="submit" name="enviar" value="Registrar"> -->
-					<div class="mt-3 " id="respuesta" >
+
+<div class="mt-3 " id="respuesta" >
 				
 					
 					
-					</div>
+				</div>
 </form>
 </div>
+
 <div class="col-10 col-md-6 mt-4 mb-4" id="colum2">
-				<img src="../../../img/map2.png" alt="">
-                
+				<img src="../../../img/user.png" alt="">
 
 			</div>
-			<div class=" col-10 col-md-12 mt-4 mb-4" id="colum3">
-				<h3>registrar una zona para ser monitoreada por una institucion</h3>
+			<div class=" col-10 col-md-6 mt-4 mb-4" id="colum3">
+				<h3>Registra el nombre de un nuevo usuario para una institucion asignandole permisos segun la funcion que va a desmpeñar</h3>
 			</div>
-
-
 </div>
 </div>
 
@@ -251,25 +275,26 @@ foreach($resultado2 as $row2){
 					<ul class="list-unstyled mb-0">
 						<li>
 							<a class="btn btn-outline-light btn-floating m-1"
-								href="https://www.facebook.com/CarabinerosdeChile" role="button"><i
-									class="fab fa-facebook-f"></i></a>
+								href="http://www.munistgo.info/seguridad/" role="button"><i
+									class="fab fa-internet-explorer"></i></a>
 
 						</li>
 						<li>
 							<!-- Instagram -->
 							<a class="btn btn-outline-light btn-floating m-1"
-								href="https://www.instagram.com/carabchile/?hl=es-la" role="button"><i
-									class="fab fa-instagram"></i></a>
+								href="https://www.instagram.com/munistgo/?hl=es-la" role="button">
+                <i	class="fab fa-instagram"></i></a>
+               
+
 
 						</li>
 						<li>
 							<!-- Instagram -->
 							<a class="btn btn-outline-light btn-floating m-1"
-								href="https://www.youtube.com/user/TVCarabineros" role="button"><i
-									class="fab fa-youtube"></i></a>
+								href="https://www.facebook.com/munistgo/" role="button"><i
+									class="fab fa-facebook"></i></a>
 
 						</li>
-
 					</ul>
 				</div>
 				<!--Grid column-->
@@ -290,20 +315,20 @@ foreach($resultado2 as $row2){
 		<!-- Copyright -->
 	</footer>
 	<!-- Footer -->
-
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
 
-
-
-<script>
+	<script >
 var formulario = document.getElementById('formulario');
 var respuesta = document.getElementById('respuesta');
 formulario.addEventListener('submit', function(e){
     e.preventDefault();
     
+
     var datos = new FormData(formulario);
    // console.log(datos.get('comuna'))
-   fetch('../../../formularios_guardar/guardar_nuevo_sector.php',{
+
+ 
+   fetch('../../../formularios_guardar/guardar_usuario.php',{
 
     method:'POST',
     body: datos
@@ -320,14 +345,33 @@ formulario.addEventListener('submit', function(e){
             					
       </div>
       `
-    }  
+    }
+	else if(data==='rutvalido'){
+        respuesta.innerHTML= `
+         <div class="alert alert-danger" role="alert">
+            el rut es valido							
+         </div>
+         `
+     }
+
+	 else if(data==='rutinvalido'){
+        respuesta.innerHTML= `
+         <div class="alert alert-danger" role="alert">
+            el rut es invalido							
+         </div>
+         `
+     }
+	
+
+    
     else if(data==='registrada'){
        respuesta.innerHTML= `
         <div class="alert alert-danger" role="alert">
-          El sector ya se encuentra registrado						
+		Usuario ya registrado - debe ingresar otro rut					
         </div>
         `
-    }  
+    }
+	
     else{
         respuesta.innerHTML= `
       <div class="alert alert-success" role="alert">
@@ -340,12 +384,18 @@ formulario.addEventListener('submit', function(e){
    })
 })
 
-</script>
 
-
-
-
-
-
+/*   respuesta.innerHTML= `
+      <div class="alert alert-success" role="alert">
+				
+		${data}		
+					
+      </div>
+      `  */
+	
+	
+	
+	
+	</script>
 </body>
 </html>

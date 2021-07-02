@@ -108,8 +108,8 @@ if (!isset($_SESSION["rol"])) {
 
 
 
-      <div class="col-12 col-md-4 mt-5">
-        <div class="card" style="width: 85%; height: 100%;">
+      <div class="col-12 col-md-4 mt-5" id="inicio">
+        <div class="card" style="width: 75%; height: 100%;">
           <img src="../../img/crimen.png" width="50" height="200" class="card-img-top" alt="...">
           <div class="card-body ">
             <h5 class="card-title">Registrar delitos </h5>
@@ -121,7 +121,7 @@ if (!isset($_SESSION["rol"])) {
 
 
       <div class="col-12 col-md-4 mt-5">
-        <div class="card" style="width: 85%; height: 100%;">
+        <div class="card" style="width: 75%; height: 100%;">
           <img src="../../img/offender.png"   width="50" height="200" class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title">Registro de un delincuente</h5>
@@ -133,7 +133,7 @@ if (!isset($_SESSION["rol"])) {
 
 
       <div class="col-12 col-md-4 mt-5">
-      <div class="card" style="width: 85%; height: 100%;">
+      <div class="card" style="width: 75%; height: 100%;">
       <img src="../../img/parientes.jpg"  width="50" height="200" class="card-img-top" alt="...">
        <div class="card-body">
     <h5 class="card-title">Registrar pariente</h5>
@@ -148,7 +148,7 @@ if (!isset($_SESSION["rol"])) {
 
 
  <div class="col-12 col-md-4 mt-5">
-<div class="card" style="width: 85%; height: 100%;">
+<div class="card" style="width: 75%; height: 100%;">
   <img src="../../img/offender.png" width="50" height="200"  class="card-img-top" alt="...">
   <div class="card-body">
     <h5 class="card-title">listado de delincuentes</h5>
