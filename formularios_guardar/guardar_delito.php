@@ -11,11 +11,17 @@ $direccion_delito = $_POST['direccion_delito'];
 $fecha_delito = $_POST['fecha_delito'];
 
 
-  $sql = 'SELECT * FROM nuevo_delito_delincuente where fecha_delito = ?';
+  $sql = 'SELECT * FROM nuevo_delito_delincuente WHERE descripcion = ? ';
   $sentencia = $pdo->prepare($sql);
-  $sentencia->execute(array($fecha_delito));
+  $sentencia->execute(array($descripcion));
+
+
+
 
  $resultado = $sentencia->fetch();
+
+
+
 
 if($resultado){
     echo json_encode('registrada');

@@ -86,68 +86,25 @@ $resultado3= $consulta3->fetchall();
 
 	<!-- fin carrusel de imagenes -->
 
-	<!-- inicio barra de navegacion -->
-	<nav class="navbar navbar-expand-lg"  >
-      <div class="container-fluid"  id="nav2">
-        <a class="navbar-brand" href="../index.php"  >  <i class="fas fa-home"></i> Inicio</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav  mr-auto">
-            <!-- <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
-        </li> -->
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Registro de Datos Institucion
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
-                <li><a class="dropdown-item" href="../formularios/registrar_nuevo_sector.php">Asignar sector</a></li>
-                <li><a class="dropdown-item" href="../formularios/registrar_delincuente.php">Nuevo delincuente</a></li>
-                <li><a class="dropdown-item" href="../formularios/registro_delito.php">Nuevo delito delincuente</a></li>
-                <li><a class="dropdown-item" href="../formularios/registrar_pariente.php">Nuevo pariente</a></li>
-                <li><a class="dropdown-item" href="../formularios/registrar_parentesco.php">Nuevo parentesco</a></li>
+	<ul class=" nav justify-content-center mt-20 " style="background-color: #8059F5;" >
+<li class="nav-item">
+<img src="../../iconos/carabinero.jpg " width="60" class="mb-4 mt-4" alt="">
+</li>
+  <li class="nav-item">
+  
+    <a class="nav-link active mb-4 mt-4 ms-5 text-white "   aria-current="page" href="#">INICIO</a>
+  </li>
+
+  <li class="nav-item mb-4 mt-4">
+  <a class="nav-link text-white"  href="../salir.php"><i class="fas fa-user-times"></i> CERRAR  SESION</a>
+  </li>
+  <li class="nav-item mb-4 mt-4 ">
+  <a class="nav-link text-white" href="#"><i class="fas fa-balance-scale"></i></i> PREVCRIM</a>
+  </li>
+</ul>
 
 
-              </ul>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Listado de delincuentes
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <li><a class="dropdown-item" href="../listado_datos/listado_delincuentes.php">delincuentes por alfabeto</a></li>
-                <li><a class="dropdown-item" href="../listado_datos/comuna_delincuente.php">delincuentes por comuna</a></li>
-                <li><a class="dropdown-item" href="../listado_datos/ultima_ves_visto.php">delincuente ultima ves visto</a></li>
-                <li><a class="dropdown-item" href="../listado_datos/listado_fechas_especificas.php">Listado por fechas especificas</a></li>
-                <li><a class="dropdown-item" href="../listado_datos/listado_comunas.php">Listado comunas</a></li>
-
-
-              </ul>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link" href="../salir.php"><i class="fas fa-user-times"></i> Cerrar sesion</a>
-            </li>
-			<li class="nav-item">
-			<a  class="nav-link" href="javascript:history.back()" name="volver">Volver atras </a>
-
-            </li>
-           
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-				  <a class="nav-link" href="../index.php"><i class="fas fa-balance-scale"></i></i> PREVCRIM</a>
-				</ul>
-          
-        </div>
-      </div>
-      
-    </nav>
 
 	<!-- fin barra de navegacion -->
 
@@ -155,7 +112,7 @@ $resultado3= $consulta3->fetchall();
 
 <div class="container">
 <div class="row">
-<div class="col-10 col-md-12 mt-4 mb-4" id="colum1"> 
+<div class="col-10 col-md-12 mt-4 mb-4 " id="colum1"> 
 
 <form class="form-style-9" id="formulario">
 <h3 class="mt-3" id="inicio">Registrar delito de delincuente</h3>
@@ -395,7 +352,7 @@ formulario.addEventListener('submit', function(e){
     else if(data==='registrada'){
        respuesta.innerHTML= `
         <div class="alert alert-danger" role="alert">
-         Ya se ingresaron delitos el día de hoy para este delincuente - se debe proceder a una investigacion previa					
+         Descripcion de delito registrado recientemente			
         </div>
         `
     }

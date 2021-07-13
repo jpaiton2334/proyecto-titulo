@@ -34,11 +34,10 @@ if (!isset($_SESSION["rol"])) {
 		integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 
 
-	<meta charset="utf-8">
+
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
  
 </head>
 
@@ -211,6 +210,17 @@ if (!isset($_SESSION["rol"])) {
 </div>
 </div>
 
+<div class="col-12 col-md-4 mt-5">
+<div class="card" style="width: 85%; height: 100%;">
+  <img src="../../img/offender.png"   width="50" height="200" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Editar datos delincuentes</h5>
+    <p class="card-text">Editar datos de los delincuentes</p>
+    <a href="../../crud/crud_listado_delincuentes.php" class="btn btn-success">Ver delincuentes </a>
+  </div>
+</div>
+</div>
+
 
 </div>
   </div>
@@ -345,6 +355,10 @@ if (!isset($_SESSION["rol"])) {
 	</footer>
 	<!-- Footer -->
   <!-- jQuery, Popper.js, Bootstrap JS -->
+
+
+
+
   <script src="../jquery/jquery-3.3.1.min.js"></script>
     <script src="../popper/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>

@@ -15,6 +15,7 @@
 	
 	//use for MySQLi OOP
 	if($pdo_eje){
+		
 		echo 'dato actualizado con éxito.';
 	}
 	

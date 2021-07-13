@@ -1,12 +1,11 @@
 html,body{
+    
+        min-width: 500px;
+        
+   
     width: 100%;
     overflow-x: hidden;
 }
-
-body{
-    background-color: brown;
-}
-
 
 #footer {
 
@@ -34,12 +33,6 @@ body{
   color: #ffff;
   
 }
-.container-fluid  {
-    background-color:#8059F5 ;
-     color: #ffff;
-     
-   }
-
 
 
 

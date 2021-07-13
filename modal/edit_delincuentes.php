@@ -6,11 +6,12 @@
         $id= $_POST['id'];
 		$nombres = $_POST['nombres'];
 		$apellidos = $_POST['apellidos'];
-   $sql ="UPDATE delincuente SET nombres,apellidos = '$nombres', '$apellidos' WHERE id = '$id'";
+		$estado = $_POST['estado'];
+   $sql ="UPDATE delincuente SET nombres,apellidos,estado= '$nombres', '$apellidos' , '$estado'WHERE id = '$id'";
 		
-	$pdoQuery = "UPDATE delincuente set nombres=:nombres,apellidos=:apellidos where id=:id";
+	$pdoQuery = "UPDATE delincuente set nombres=:nombres,apellidos=:apellidos ,estado=:estado where id=:id";
 	$ejecutar = $pdo->prepare($pdoQuery);
-	$pdo_eje = $ejecutar->execute(array(":id"=>$id,":nombres"=>$nombres,":apellidos"=>$apellidos));	
+	$pdo_eje = $ejecutar->execute(array(":id"=>$id,":nombres"=>$nombres,":apellidos"=>$apellidos ,":estado"=>$estado));	
 	
 	
 	

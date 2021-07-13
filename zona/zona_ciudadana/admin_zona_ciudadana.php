@@ -113,7 +113,7 @@ if (!isset($_SESSION["rol"])) {
           <div class="card-body ">
             <h5 class="card-title"> Crear usuarios </h5>
             <p class="card-text">Crear usuarios operador para una institucion</p>
-            <a href="registros/usuario_cui.php" class="btn btn-secondary"> Crear usuario</a>
+            <a href="registros/usuario_cui.php" class="btn btn-secondary" > Crear usuario</a>
           </div>
         </div>
       </div>
@@ -135,7 +135,7 @@ if (!isset($_SESSION["rol"])) {
           <img src="../../img/map2.png"  width="50" height="200" class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title">Asignar sectores </h5>
-            <p class="card-text">Crear sectores para monitorear</p>
+            <p class="card-text">Crear sectores para monitorear una zona</p>
             <a href="registros/sector_cui.php" class="btn btn-secondary">Registrar sector</a>
           </div>
         </div>

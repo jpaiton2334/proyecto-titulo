@@ -209,6 +209,19 @@ $resultado = $sql->fetchall();
 
     <div class="row"  id="card">
 
+    <div class="col-10 col-md-4 col-lg-3 mt-5" >
+        <div class="card " style="width: 85%; height: 100%;">
+  
+          <img src="img/map.png" width="50" height="200" class="card-img-top" alt="...">  
+          <div class="card-body ">
+            <h5 class="card-title"> Sectores donde se han ocasionado robos</h5>
+            <p class="card-text">Mapa global se sectores </p>
+            <a href="mapas/mp/index.php" class="btn btn-primary"> Ir al mapa</a>
+          </div>
+        </div>
+      </div>
+
+
       <div class="col-10 col-md-4 col-lg-3 mt-5" >
         <div class="card " style="width: 85%; height: 100%;">
   
@@ -289,7 +302,16 @@ $resultado = $sql->fetchall();
       </div>
 
 
-      <div class="col-10 col-md-4 col-lg-3 mt-5">
+     
+
+    </div><!------fiv del row--->
+
+
+
+
+    <div class="row"  id="card">
+    
+    <div class="col-10 col-md-4 col-lg-3 mt-5">
         <div class="card" style="width:  85%; height: 100%;">
           <img src="img/crimen.png" width="50" height="200" class="card-img-top" alt="...">
           <div class="card-body">
@@ -300,13 +322,6 @@ $resultado = $sql->fetchall();
         </div>
       </div>
 
-    </div><!------fiv del row--->
-
-
-
-
-    <div class="row"  id="card">
-    
     <div class="col-10 col-md-4 col-lg-3 mt-5">
         <div class="card" style="width:  85%; height: 100%;">
           <img src="img/map.png" width="50" height="200" class="card-img-top" alt="...">

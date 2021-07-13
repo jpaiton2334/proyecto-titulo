@@ -33,12 +33,7 @@ if (!isset($_SESSION["rol"])) {
   
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <title>Usuario Carabinero</title>
-  <style>
-    form {
 
-      width: 50%;
-    }
-  </style>
 </head>
 
 <body>
@@ -114,7 +109,7 @@ if (!isset($_SESSION["rol"])) {
           <div class="card-body ">
             <h5 class="card-title">Registrar delitos </h5>
             <p class="card-text">Registrar delitos de delincuentes</p>
-            <a href="../../formularios/registro_delito.php" class="btn btn-success">Registrar delito</a>
+            <a href="../../formularios/registro_delito.php" class="btn btn-success ">Registrar delito</a>
           </div>
         </div>
       </div>

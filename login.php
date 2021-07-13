@@ -1,4 +1,5 @@
 
+
 <?php if ($_POST) {
     session_start();
     require('conexion.php');
@@ -40,12 +41,23 @@
        $result = $pdo->prepare($sql);
        $result->bindParam(1,$username);
        $result->execute();
- 
 
-
+        
+     
        $row = $result->fetch();
-      
+      if(!$row || $row<1 ){
 
+        echo "<script>
+        alert('Usuario incorrecto');
+        window.location= 'login.php'
+        </script>";
+     
+     
+     
+     
+
+      }
+     
       if(password_verify($pass,$row['pass'] )){
           $rol = $row[7];
           $_SESSION['rol'] = $rol;
@@ -84,7 +96,7 @@
          }else{
            
                 echo('<script type="text/javascript">
-                alert("usuario o contraseña incorrectos");
+                alert("contraseña incorrecta");
                </script>');
              
          

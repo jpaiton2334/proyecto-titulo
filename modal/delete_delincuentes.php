@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	include('conexion.php');
+	include('../conexion.php');
 
 	if(isset($_GET['id'])){
 		$sql = "DELETE FROM delincuente WHERE id = '".$_GET['id']."'";
@@ -18,5 +18,5 @@
 	echo'Seleccionar miembro para eliminar primero.';
 	}
 
-	header('location: listado_delincuentes.php');
+	header('location: crud/crud_listado_delincuentes.php');
 ?>
